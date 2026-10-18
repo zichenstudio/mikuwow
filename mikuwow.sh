@@ -150,10 +150,10 @@ while [ $# -gt 0 ]; do
         -a)  API_URL="$2"; API_FROM_ARG=1; shift 2 ;;
         -n)  DO_ONCE=1; shift ;;
         -s)  SHOW_STATUS=1; shift ;;
-        -f|--fav)      DO_FAV=1; shift ;;
-        -u|--unfav)    DO_UNFAV=1; shift ;;
-        -F|--list-fav) DO_LIST_FAV=1; shift ;;
-        -N|--fav-next)
+        -f)      DO_FAV=1; shift ;;
+        -u)    DO_UNFAV=1; shift ;;
+        -F) DO_LIST_FAV=1; shift ;;
+        -N)
             FAV_NEXT=1
             if [ $# -ge 2 ] && [ "${2#-}" = "$2" ]; then
                 FAV_NEXT_IDX="$2"; shift
@@ -573,7 +573,7 @@ cleanup_pid() { rm -f "$PID_FILE"; }
 trap 'cleanup_pid; log "退出"; exit 0' EXIT INT TERM
 
 # ---------- 清理残留临时文件 ----------
-find "$CACHE_DIR" -maxdepth 1 -type f \( -name 'dl.*' -o -name 'hd.*' \) -mmin +60 -delete 2>/dev/null
+find "$CACHE_DIR" -maxdepth 1 -type f \( -name 'dl.*' -o -name 'hd.*' \) -mmin +1 -delete 2>/dev/null
 
 # ---------- 主流程 ----------
 count=0
