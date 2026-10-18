@@ -34,7 +34,7 @@ set -uo pipefail
 
 # ---------- 默认值 ----------
 DEF_API_URL="https://api.mikupara.com/api/h"
-DEF_INTERVAL=900
+DEF_INTERVAL=3600
 DEF_KEEP_COUNT=3
 DEF_MAX_RETRY=5
 DEF_MAX_HASH=0          # 0 = 不限制
