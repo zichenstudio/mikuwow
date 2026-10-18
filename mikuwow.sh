@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: BSD-3-Clause
+# Copyright (c) 2026, imoutopia
 #
 # mikuwow.sh - 基于 feh + curl 的随机壁纸切换工具（含收藏功能 + 安全建目录）
 #
