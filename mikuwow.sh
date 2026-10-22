@@ -30,6 +30,8 @@
 #
 # ---------- end of help ----------
 
+export DISPLAY=:0
+
 set -uo pipefail
 
 # ---------- 默认值 ----------
